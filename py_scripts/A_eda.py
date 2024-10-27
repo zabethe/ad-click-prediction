@@ -2,16 +2,12 @@
 
 # Importing libraries
 from pathlib import Path
-
 import pandas as pd
 import numpy as np
 import math
-
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from IPython.display import display
-
 # Setting seed
 np.random.seed(42)
 
@@ -29,9 +25,8 @@ def save_fig(fig_name, tight_layout=True, fig_extension='png', resolution=300):
 # IMPORTANT VARIABLES
 # Importing data
 adclicks = pd.read_csv('data/ad_click_dataset.csv')
-# Dropping `full_name`
-adclicks = adclicks.drop('full_name', axis=1, inplace=False)
-
+# Dropping `full_name` and `id`
+adclicks = adclicks.drop(columns=['full_name', 'id'], axis=1, inplace=False)
 # Select the categorical features
 categoricals = list(adclicks.select_dtypes(include=['category', 'object']).columns)
 

@@ -47,6 +47,7 @@ strat_train_set, strat_test_set = strat_splits[0]
 
 # Make a copy of the training set incase we want to revert
 adclicks = strat_train_set.copy()
+test_set = strat_test_set
 
 
 # PLT_SHOW: a function to name and save the image of the current plot
